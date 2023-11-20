@@ -25,7 +25,7 @@ if (isset($_FILES["image"])){
         if ($error == UPLOAD_ERR_OK && $_FILES["image"]["type"][$key] == "image/jpeg" && move_uploaded_file($tmp_name, IMG_SAVE_FOLDER . "/$name")) {
                 echo "</br>Se ha guardado con éxito el fichero $name";
         } else{
-            echo "</br>Se ha producido un error y no se ha podido guardar la imagen $name. </br>Error: " . $_FILES["image"]["error"][$key] . ". Tamaño archivo: " . $_FILES["image"]["size"][$key] / 1000 . "KB</br>";
+            echo "</br>Se ha producido un error y no se ha podido guardar la imagen $name. </br>Error: " . $_FILES["image"]["error"][$key] . ". Tamaño archivo: " . $_FILES["image"]["size"][$key] / 1024 . "KB</br>";
         }
     }
 }
